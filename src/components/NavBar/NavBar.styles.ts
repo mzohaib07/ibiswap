@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom'
 
 export const Wrapper = styled.section`
   position: fixed;
-  z-index: 1;
-  background-color:#231f20;
+  background-color:#04111d;
   display: grid;
   grid-template-columns: 350px auto 680px;
-  width: 100vw;
+  width: 100%;
   padding: 5px 0px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  z-index: 9999;
   `;
 
 export const NavLink = styled(Link)`
@@ -36,12 +36,16 @@ export const HeaderItems = styled.div`
   justify-content: flex-end;
   align-items: center;
 `;
-export const HeaderItem = styled.div`
+export const HeaderItem = styled.span`
   padding-left: 1rem;
   padding-right: 2rem;
-  color: #ffffff;
+  color: gray;
   font-weight: 700;
   cursor: pointer;
+  transition: .1s ease-in-out;
+  &:hover{
+    color: #ffffff;
+  }
 `;
 
 export const HeaderIcon = styled.div`
@@ -52,7 +56,11 @@ export const HeaderIcon = styled.div`
   font-weight: 900;
   cursor: pointer;
   .icon{
-      color: white;
-      font-size: 25px;
+      color: gray;
+      font-size: 33px;
+      transition: .1s ease-in-out;
+      &:hover{
+        color: white;
+      }
   }
 `;

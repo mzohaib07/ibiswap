@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   position: relative;
 
   .container {
-  
+    cursor: pointer;
     display: flex;
     justify-content: center;
   }
@@ -80,6 +80,7 @@ export const Wrapper = styled.div`
     color:#ffed00 ;
     border: 2px solid #ffed00 ;
     cursor: pointer;
+   
   }
   .author {
     margin-left: 1rem;

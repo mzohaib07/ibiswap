@@ -2,7 +2,7 @@ import { Card, Typography } from "@mui/material"
 import { CardTile } from "../../constants/MockData"
 import { CardStyles } from "./CardWrapper.styles"
 
-const CardWrapper = () => {
+const DrawerWrapper = () => {
   return (
     <CardStyles>
       <div className="title-section">
@@ -27,4 +27,4 @@ const CardWrapper = () => {
   )
 }
 
-export default CardWrapper
+export default DrawerWrapper

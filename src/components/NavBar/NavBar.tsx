@@ -1,10 +1,25 @@
+import React from 'react';
 import ibiswaplogo from '../../assets/Simbolo.png'
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
 import SearchBarWrapper from '../common/SearchBar/SearchBarWrapper';
 import { HeaderIcon, HeaderItem, HeaderItems, LogoContainer, NavLink, Wrapper } from './NavBar.styles'
+import { Context } from '../../context/Context';
+import { OPENDRAWER } from '../../constants/MockData';
+import PopoverWrapper from '../common/Popover/PopoverWraper';
 
 const NavBar = () => {
+  const { state, dispatch } = React.useContext(Context)
+  const { open } = state
+
+  const handleWallet = () => {
+    dispatch({
+      type: OPENDRAWER,
+      payload: {
+        open: !open
+      }
+    })
+  }
   return (
     <Wrapper>
       <div>
@@ -18,7 +33,9 @@ const NavBar = () => {
       <SearchBarWrapper title={"Search items , collections , and accounts"} />
       <HeaderItems>
         <NavLink to="/">
-          <HeaderItem> Collections </HeaderItem>
+          <PopoverWrapper>
+            <HeaderItem>Collections</HeaderItem>
+          </PopoverWrapper> 
         </NavLink>
         <HeaderItem> Stats </HeaderItem>
         <HeaderItem> Resources </HeaderItem>
@@ -27,7 +44,7 @@ const NavBar = () => {
           <AccountCircleOutlinedIcon className='icon' />
         </HeaderIcon>
         <HeaderIcon>
-          <AccountBalanceWalletOutlinedIcon className='icon' />
+          <AccountBalanceWalletOutlinedIcon className='icon' onClick={handleWallet} />
         </HeaderIcon>
       </HeaderItems>
     </Wrapper>

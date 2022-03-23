@@ -16,7 +16,7 @@ const Hero = () => {
             </div>
             <div className='ctaContainer'>
               <button className='explore-btn'>Explore</button>
-              <button className='create-btn'>Create</button>
+              <button className='create-btn'><span>Create</span></button>
             </div>
           </div>
           <div className='card-container'>
