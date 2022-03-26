@@ -1,0 +1,23 @@
+.MuiMenu-root {
+  padding: 0px !important;
+}
+.MuiMenu-paper {
+  border-radius: 10px !important;
+  background-color: #353840 !important;
+  color: white !important;
+  width: 180px;
+  margin-top: 8px;
+}
+.MuiMenu-list li {
+  padding: 15px 15px;
+  font-weight: 700;
+  border-bottom: 1px solid black;
+}
+.MuiMenu-list li:hover {
+  background-color: #202225 !important;
+}
+.link-items {
+  text-decoration: none;
+  color: white;
+  font-weight: 800;
+}

@@ -1,56 +1,49 @@
 import * as React from 'react';
-import Popover from '@mui/material/Popover';
 import { Menu, MenuItem } from '@mui/material';
+import './style.css'
+import { explore, } from '../../../constants/constants';
+
+import {
+    Link
+} from "react-router-dom";
 
 const PopoverWrapper = ({ children }: any) => {
-    const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
-    const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
+    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
     };
-    const handlePopoverClose = () => {
+    const handleClose = () => {
         setAnchorEl(null);
     };
-    const open = Boolean(anchorEl);
     return (
         <>
             <span
-                aria-owns={open ? 'mouse-over-popover' : undefined}
+                id="basic-button"
                 aria-haspopup="true"
-                onMouseEnter={handlePopoverOpen}
-                onMouseLeave={handlePopoverClose}
+                aria-controls={open ? 'basic-menu' : undefined}
+                aria-expanded={open ? 'true' : undefined}
+                onClick={handleClick}
             >
                 {children}
             </span>
-            <Popover
-            style={{zIndex:'9999' , marginTop:'60px'}}
-                id="mouse-over-popover"
-                sx={{
-                    pointerEvents: 'none',
-                }}
-                open={open}
-                anchorEl={anchorEl}
-                disableRestoreFocus
-            >
-                <Menu
 
-                    id="demo-positioned-menu"
-                    aria-labelledby="demo-positioned-button"
-                    anchorEl={anchorEl}
-                    open={open}
-                    anchorOrigin={{
-                        vertical: 'top',
-                        horizontal: 'left',
-                    }}
-                    transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'left',
-                    }}
-                >
-                    <MenuItem onClick={handlePopoverClose}>Profile</MenuItem>
-                    <MenuItem onClick={handlePopoverClose}>My account</MenuItem>
-                    <MenuItem onClick={handlePopoverClose}>Logout</MenuItem>
-                </Menu>
-            </Popover>
+            <Menu
+                id="basic-menu"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+
+            >
+                {explore.map((item, index) => <MenuItem key={index} onClick={handleClose}>
+                    <div style={{ display: 'flex', columnGap: '10px' }}>
+                        <span style={{ color: 'lightblue' }} >{item?.icon}</span>
+                        <Link to={`/${item?.name}`} className='link-items'>{item?.name}</Link>
+                    </div>
+                </MenuItem>)
+                }
+            </Menu>
+
         </>
     );
 }

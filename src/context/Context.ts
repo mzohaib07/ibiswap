@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 import {
     OPENDRAWER,
-} from '../constants/MockData';
+} from '../constants/constants';
 
 import { dispatch, InitialStateType } from '../types/index';
 

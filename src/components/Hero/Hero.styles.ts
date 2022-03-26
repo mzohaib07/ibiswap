@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
   position: relative;
 
   .container {
-    cursor: pointer;
     display: flex;
     justify-content: center;
   }
@@ -13,7 +12,7 @@ export const Wrapper = styled.div`
     background-image: url(${bgImg});
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 1;
+    z-index: 9999;
   }
   .content-wrapper {
     display: flex;

@@ -7,7 +7,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import SearchBarWrapper from "../common/SearchBar/SearchBarWrapper";
 import ibiswaplogo from '../../assets/Simbolo.png'
-import { company, marketplace, myaccount, resources, stats } from "../../constants/MockData";
+import { company, marketplace, myaccount, resources, stats } from "../../constants/constants";
 
 
 const Footer = () => {

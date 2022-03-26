@@ -37,8 +37,7 @@ export const HeaderItems = styled.div`
   align-items: center;
 `;
 export const HeaderItem = styled.span`
-  padding-left: 1rem;
-  padding-right: 2rem;
+  padding: 23px;
   color: gray;
   font-weight: 700;
   cursor: pointer;

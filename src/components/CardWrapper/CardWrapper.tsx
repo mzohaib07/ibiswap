@@ -1,5 +1,5 @@
 import { Card, Typography } from "@mui/material"
-import { CardTile } from "../../constants/MockData"
+import { CardTile } from "../../constants/constants"
 import { CardStyles } from "./CardWrapper.styles"
 
 const DrawerWrapper = () => {

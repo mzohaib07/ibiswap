@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import HomePage from './Pages/HomePage';
 import { Context, initialState, Reducer } from './context/Context';
+import NFT from './components/NFT/NFT';
 
 const App: React.FC = () => {
   const [state, dispatch] = React.useReducer(Reducer, initialState)
@@ -15,7 +16,8 @@ const App: React.FC = () => {
     <Context.Provider value={{ state, dispatch }}>
       <BrowserRouter>
         <Routes>
-          <Route index element={<HomePage />} />
+          <Route index  element={<HomePage />} />
+          <Route path='/ALL%20NFT' element={<NFT />} />
         </Routes>
       </BrowserRouter>
     </Context.Provider>

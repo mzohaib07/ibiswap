@@ -5,7 +5,7 @@ import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalance
 import SearchBarWrapper from '../common/SearchBar/SearchBarWrapper';
 import { HeaderIcon, HeaderItem, HeaderItems, LogoContainer, NavLink, Wrapper } from './NavBar.styles'
 import { Context } from '../../context/Context';
-import { OPENDRAWER } from '../../constants/MockData';
+import { OPENDRAWER } from '../../constants/constants';
 import PopoverWrapper from '../common/Popover/PopoverWraper';
 
 const NavBar = () => {
@@ -35,9 +35,13 @@ const NavBar = () => {
         <NavLink to="/">
           <PopoverWrapper>
             <HeaderItem>Collections</HeaderItem>
-          </PopoverWrapper> 
+          </PopoverWrapper>
         </NavLink>
-        <HeaderItem> Stats </HeaderItem>
+        <HeaderItem>
+          <PopoverWrapper>
+            Stats
+          </PopoverWrapper>
+        </HeaderItem>
         <HeaderItem> Resources </HeaderItem>
         <HeaderItem> Create </HeaderItem>
         <HeaderIcon>

@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Context } from '../../../context/Context';
-import { OPENDRAWER, wallets } from '../../../constants/MockData';
+import { OPENDRAWER, wallets } from '../../../constants/constants';
 import { BoxStyle } from './DrawerWrapper.styles';
 import { Typography } from '@mui/material';
 import './style.css'

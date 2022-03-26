@@ -1,7 +1,14 @@
-import metamaskimg from '../assets/metamask.png'
-import coinbaseimg from '../assets/coinbase-logo.png'
-import walletconnectimg from '../assets/walletconnect.png'
-import formnaticimg from '../assets/formnatic.png'
+import metamaskimg from '../assets/metamask.png';
+import coinbaseimg from '../assets/coinbase-logo.png';
+import walletconnectimg from '../assets/walletconnect.png';
+import formnaticimg from '../assets/formnatic.png';
+import HiveIcon from '@mui/icons-material/Hive';
+import BubbleChartIcon from '@mui/icons-material/BubbleChart';
+import AppsIcon from '@mui/icons-material/Apps';
+import DnsIcon from '@mui/icons-material/Dns';
+import MusicNoteIcon from '@mui/icons-material/MusicNote';
+import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
+import SportsKabaddiIcon from '@mui/icons-material/SportsKabaddi';
 
 
 export const OPENDRAWER = 'OPENDRAWER'
@@ -84,7 +91,46 @@ export const wallets = [
     },
     {
         name: 'Fortmatic',
-        img: formnaticimg
-    }
+        img: formnaticimg,
+    },
+]
 
+export const explore = [
+    {
+        icon: <HiveIcon />,
+        name: 'ALL NFT'
+    },
+    {
+        icon: <BubbleChartIcon />,
+        name: 'Art'
+    },
+    {
+        icon: <AppsIcon />,
+        name: 'Collectibles'
+    },
+    {
+        icon: <DnsIcon />,
+        name: 'Domain Name'
+    },
+    {
+        icon: <MusicNoteIcon />,
+        name: 'Music'
+    },
+    {
+        icon: <AddAPhotoIcon />,
+        name: 'Photography'
+    },
+    {
+        icon: <SportsKabaddiIcon />,
+        name: 'Sports'
+    }
+]
+
+export const Stats = [
+    {
+        name:"Ranking"
+    },
+    {
+        name:'Activity'
+    }
 ]
