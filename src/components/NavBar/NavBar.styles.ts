@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 
 export const Wrapper = styled.section`
-  position: fixed;
   background-color:#04111d;
   display: grid;
   grid-template-columns: 350px auto 680px;
