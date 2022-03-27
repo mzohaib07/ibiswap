@@ -7,20 +7,21 @@ export const PopoverContentStyles = styled.div`
     .cover-section{
         .popover-img{
         width: 100%;
-        height: 50px;
+        height: 80px;
         object-fit: cover;
         }   
     }
     .profile-section{
         position: relative;
-        
+    
     .popover-profile-img{
         position: absolute;
-        left:105px;
+        left:120px;
         top:-21px;
         border-radius: 50%;
         width: 40px;
         height: 40px;
+    
         }
     }
     .name-section{

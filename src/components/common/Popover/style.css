@@ -2,11 +2,12 @@
   padding: 0px !important;
 }
 .MuiMenu-paper {
-  border-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
   background-color: #353840 !important;
   color: white !important;
   width: 180px;
-  margin-top: 8px;
+  margin-top: 29px;
 }
 .MuiMenu-list li {
   padding: 15px 15px;

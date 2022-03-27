@@ -29,6 +29,8 @@ export const NFTItemsStyles = styled.section`
         max-height: 100%;
         border-radius: 0px;
         box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
     }
     .card-content{
         display: flex;
@@ -56,7 +58,15 @@ export const NFTItemsStyles = styled.section`
     }
     .card-actions{
         display: flex;
-        justify-content: end;
+        justify-content: space-between;
+        margin: 0px 5px;
+        span:nth-child(1){
+            color: skyblue;
+            font-size: 13px;
+            &:hover{
+                color: grey;
+            }
+        }
         .heart-icon{
             color: gray;
             &:hover{

@@ -6,9 +6,11 @@ import PopoverContent from '../PopoverContent/PopoverContent';
 import './styles.css'
 
 const NFTItems = () => {
+    const showContent = () => {
+        // document.getElementById('buy-now').
+    }
     return (
-        <NFTItemsStyles>
-
+        <NFTItemsStyles onMouseEnter={showContent}>
             <Card className='card'>
                 <CardMedia
                     component="img"
@@ -44,6 +46,9 @@ const NFTItems = () => {
                     </span>
                 </CardContent>
                 <CardActions className='card-actions'>
+                    <span>
+                        Buy now
+                    </span>
                     <span className='heart-icon-content'>
                         <Tooltip title="Favorite" placement="top" arrow>
                             <FavoriteBorderIcon className='heart-icon' />

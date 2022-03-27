@@ -1,5 +1,4 @@
-import Card from "../components/CardWrapper/CardWrapper"
-import DrawerWrapper from "../components/common/Drawer/DrawerWrapper"
+import Card from "../components/common/CardWrapper/CardWrapper"
 import Footer from "../components/Footer/Footer"
 import Hero from "../components/Hero/Hero"
 
@@ -9,7 +8,6 @@ const HomePage = () => {
       <Hero />
       <Card />
       <Footer />
-      <DrawerWrapper />
     </>
   )
 }

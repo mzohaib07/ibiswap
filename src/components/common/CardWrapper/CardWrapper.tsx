@@ -1,8 +1,8 @@
 import { Card, Typography } from "@mui/material"
-import { CardTile } from "../../constants/constants"
+import { CardTile } from "../../../constants/constants"
 import { CardStyles } from "./CardWrapper.styles"
 
-const DrawerWrapper = () => {
+const CardWrapper = () => {
   return (
     <CardStyles>
       <div className="title-section">
@@ -27,4 +27,4 @@ const DrawerWrapper = () => {
   )
 }
 
-export default DrawerWrapper
+export default CardWrapper

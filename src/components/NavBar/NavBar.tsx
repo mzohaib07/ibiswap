@@ -3,14 +3,15 @@ import ibiswaplogo from '../../assets/Simbolo.png'
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
 import SearchBarWrapper from '../common/SearchBar/SearchBarWrapper';
+import PopoverWrapper from '../common/Popover/PopoverWraper';
 import { HeaderIcon, HeaderItem, HeaderItems, LogoContainer, NavLink, Wrapper } from './NavBar.styles'
 import { Context } from '../../context/Context';
 import { OPENDRAWER } from '../../constants/constants';
-import PopoverWrapper from '../common/Popover/PopoverWraper';
 
 const NavBar = () => {
   const { state, dispatch } = React.useContext(Context)
-  const { open } = state
+  const { open } = state;
+
 
   const handleWallet = () => {
     dispatch({
@@ -32,16 +33,14 @@ const NavBar = () => {
       </div>
       <SearchBarWrapper title={"Search items , collections , and accounts"} />
       <HeaderItems>
-        <NavLink to="/">
-          <PopoverWrapper>
-            <HeaderItem>Collections</HeaderItem>
-          </PopoverWrapper>
-        </NavLink>
-        <HeaderItem>
-          <PopoverWrapper>
+        <PopoverWrapper>
+          <HeaderItem>Collections</HeaderItem>
+        </PopoverWrapper>
+        <NavLink to='/stats'>
+          <HeaderItem>
             Stats
-          </PopoverWrapper>
-        </HeaderItem>
+          </HeaderItem>
+        </NavLink>
         <HeaderItem> Resources </HeaderItem>
         <HeaderItem> Create </HeaderItem>
         <HeaderIcon>

@@ -35,7 +35,7 @@ const DrawerWrapper = () => {
 
   return (
     <div>
-      {(['right'] as const).map((anchor , index) => (
+      {(['right'] as const).map((anchor, index) => (
         <Drawer
           key={index}
           anchor={anchor}

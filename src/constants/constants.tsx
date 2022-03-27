@@ -9,6 +9,7 @@ import DnsIcon from '@mui/icons-material/Dns';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import SportsKabaddiIcon from '@mui/icons-material/SportsKabaddi';
+import { Column, createData } from '../types';
 
 
 export const OPENDRAWER = 'OPENDRAWER'
@@ -126,11 +127,53 @@ export const explore = [
     }
 ]
 
-export const Stats = [
+export const COLUMNS: readonly Column[] = [
+    { id: 'collection', label: 'Collection', minWidth: 170 },
+    { id: 'volume', label: 'Volume', minWidth: 100 },
     {
-        name:"Ranking"
+        id: '24',
+        label: '24h%',
+        minWidth: 170,
     },
     {
-        name:'Activity'
-    }
-]
+        id: '7',
+        label: '7d %',
+        minWidth: 170,
+
+    },
+    {
+        id: 'floorprice',
+        label: 'Floor Price',
+        minWidth: 170,
+
+    },
+    {
+        id: 'owners',
+        label: 'Owners',
+        minWidth: 170,
+
+    },
+    {
+        id: 'items',
+        label: 'Items',
+        minWidth: 170,
+    },
+];
+
+export const ROWS = [
+    createData('India', 'IN', 1324171354, 3287263),
+    createData('China', 'CN', 1403500365, 9596961),
+    createData('Italy', 'IT', 60483973, 301340),
+    createData('United States', 'US', 327167434, 9833520),
+    createData('Canada', 'CA', 37602103, 9984670),
+    createData('Australia', 'AU', 25475400, 7692024),
+    createData('Germany', 'DE', 83019200, 357578),
+    createData('Ireland', 'IE', 4857000, 70273),
+    createData('Mexico', 'MX', 126577691, 1972550),
+    createData('Japan', 'JP', 126317000, 377973),
+    createData('France', 'FR', 67022000, 640679),
+    createData('United Kingdom', 'GB', 67545757, 242495),
+    createData('Russia', 'RU', 146793744, 17098246),
+    createData('Nigeria', 'NG', 200962417, 923768),
+    createData('Brazil', 'BR', 210147125, 8515767),
+];
