@@ -6,10 +6,10 @@ import {
   Route,
 } from "react-router-dom";
 import HomePage from './Pages/HomePage';
-import NFT from './components/NFT/NFT';
 import NavBar from './components/NavBar/NavBar';
 import DrawerWrapper from './components/common/Drawer/DrawerWrapper';
-import Stats from './components/Stats/Stats';
+import StatsPage from './Pages/StatsPage';
+import NFTPage from './Pages/Explore/NFTPage/NFTPage';
 import { Context, initialState, Reducer } from './context/Context';
 
 const App: React.FC = () => {
@@ -21,9 +21,8 @@ const App: React.FC = () => {
         <DrawerWrapper />
         <Routes>
           <Route index element={<HomePage />} />
-          <Route path='/ALL%20NFT' element={<NFT />} />
-          <Route path='/stats' element={<Stats />} />
-
+          <Route path='/ALL%20NFT' element={<NFTPage />} />
+          <Route path='/stats' element={<StatsPage />} />
         </Routes>
       </BrowserRouter>
     </Context.Provider>

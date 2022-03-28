@@ -3,6 +3,7 @@ import DropdownWrapper from '../common/DropdownWrapper/DropdownWrapper'
 import TableWrapper from '../common/TableWrapper/TableWrapper'
 import { Typography } from '@mui/material'
 import { StatsStyle } from './Stats.style'
+import { CHAINS, explore, FIRSTSELECT } from '../../constants/constants'
 
 const Stats = () => {
     return (
@@ -14,9 +15,9 @@ const Stats = () => {
                 <Typography className='desp' variant='h6'>The top NFTs on OpenSea, ranked by volume, floor price and other statistics.</Typography>
             </div>
             <div className='dropdown-section'>
-                <DropdownWrapper title={"Last 7 days"} />
-                <DropdownWrapper title={"All Categories"} />
-                <DropdownWrapper title={"All Chains"} />
+                <DropdownWrapper title={"Last 7 days"} FIRSTSELECT={FIRSTSELECT} />
+                <DropdownWrapper title={"All Categories"} explore={explore}  />
+                <DropdownWrapper title={"All Chains"} CHAINS={CHAINS} />
             </div>
             <div className='table-section'>
                 <TableWrapper />

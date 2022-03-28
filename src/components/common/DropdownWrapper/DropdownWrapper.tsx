@@ -1,80 +1,56 @@
 import * as React from 'react';
-import { styled, alpha } from '@mui/material/styles';
-import Button from '@mui/material/Button';
-import Menu, { MenuProps } from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import EditIcon from '@mui/icons-material/Edit';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { DropdownWrapperStyles } from './DropdownWrapper.styles';
+import { FormControl, Typography } from '@mui/material';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import './styles.css'
 
-const StyledMenu = styled((props: MenuProps) => (
-  <Menu
-    elevation={0}
+const DropdownWrapper = ({ title, FIRSTSELECT, explore, CHAINS }: any) => {
+  const [option, setOption] = React.useState('');
 
-    {...props}
-  />
-))(({ theme }) => ({
-  '& .MuiPaper-root': {
-    borderRadius: 6,
-    marginTop: theme.spacing(1),
-    minWidth: 180,
-    color:
-      theme.palette.mode === 'light' ? 'rgb(55, 65, 81)' : theme.palette.grey[300],
-    boxShadow:
-      'rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',
-    '& .MuiMenu-list': {
-      padding: '4px 0',
-    },
-    '& .MuiMenuItem-root': {
-      '& .MuiSvgIcon-root': {
-        fontSize: 18,
-        color: theme.palette.text.secondary,
-        marginRight: theme.spacing(1.5),
-      },
-      '&:active': {
-        backgroundColor: alpha(
-          theme.palette.primary.main,
-          theme.palette.action.selectedOpacity,
-        ),
-      },
-    },
-  },
-}));
-
-const DropdownWrapper = ({ title }: any) => {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
+  const handleChange = (event: SelectChangeEvent) => {
+    setOption(event.target.value);
   };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
   return (
     <DropdownWrapperStyles>
-      <Button
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        variant="contained"
-        disableElevation
-        onClick={handleClick}
-        endIcon={<KeyboardArrowDownIcon />}
-        className='btn'
-      >
-        {title}
-      </Button>
-      <StyledMenu
-        id="demo-customized-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-      >
-        <MenuItem onClick={handleClose} disableRipple>
-          <EditIcon />
-          Edit
-        </MenuItem>
-      </StyledMenu>
+      <FormControl>
+        <Select
+          className='select'
+          value={option}
+          onChange={handleChange}
+          displayEmpty
+        >
+          <MenuItem value="">
+            <Typography>{title}</Typography>
+          </MenuItem>
+          {FIRSTSELECT && FIRSTSELECT.map((item: any, index: any) =>
+          (
+            <MenuItem key={index} value={item?.name}>
+              <Typography >{item?.name}</Typography>
+            </MenuItem>
+          ))
+          }
+          {
+            explore && explore.map((item: any, index: any) =>
+            (
+              <MenuItem key={index} value={item?.name} style={{ display: 'flex', columnGap: '10px', alignContent: 'center' }}>
+                <span>{item?.icon}</span>
+                <Typography >{item?.name}</Typography>
+              </MenuItem>
+            ))
+          }
+          {
+            CHAINS && CHAINS.map((item: any, index: any) =>
+            (
+              <MenuItem key={index} value={item?.name}>
+                <Typography >{item?.name}</Typography>
+              </MenuItem>
+            ))
+          }
+        </Select>
+      </FormControl>
+
+
     </DropdownWrapperStyles>
   );
 }

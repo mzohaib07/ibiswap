@@ -1,71 +1,51 @@
-import * as React from 'react';
-import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
-import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-import { COLUMNS, ROWS } from '../../../constants/constants'
 import { PaperStyle } from './TableWrapper.styles';
+import { COLUMNS, ROWS } from '../../../constants/constants';
+import { TablePagination } from '@mui/material';
 
 
-const TableWrapper = () => {
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
-  const handleChangePage = (event: unknown, newPage: number) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-  };
-
+const BasicTable = () => {
   return (
     <PaperStyle>
-      <TableContainer>
-        <Table className='table'>
-          <TableHead>
-            <TableRow>
-              {COLUMNS.map((column) => (
-                <TableCell
-                  key={column.id}
-                  style={{ color: 'white', fontSize: '15px' }}
-                >
-                  {column.label}
-                </TableCell>
-              ))}
+      <Table style={{ backgroundColor: '#202225', border: 'none', outline: 'none' }} sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            {COLUMNS.map((item, index) =>
+              <TableCell className='table-cell' key={index}>
+                {item?.headerName}
+              </TableCell>
+            )}
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {ROWS.map((row) => (
+            <TableRow
+              className='table-data'
+              key={row.name}
+            >
+              <TableCell style={{ width: '300px' }} className='table-cell' component="th" scope="row">
+                {row.name}
+              </TableCell>
+              <TableCell className='table-cell'>{row.calories}</TableCell>
+              <TableCell className='table-cell'>{row.fat}</TableCell>
+              <TableCell style={{ color: 'red' }} className='table-cell'>{row.carbs}</TableCell>
+              <TableCell className='table-cell'>{row.protein}</TableCell>
+              <TableCell style={{ color: 'yellow' }} className='table-cell'>{row.curb}</TableCell>
+              <TableCell className='table-cell'>{row.fats}</TableCell>
+
             </TableRow>
-          </TableHead>
-          <TableBody>
-            {ROWS
-              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((row) => {
-                return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                    <TableCell>
-                      zohaib
-                    </TableCell>
-                  </TableRow>
-                );
-              })}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
-        component="div"
-        count={ROWS.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
+          ))}
+        </TableBody>
+      </Table>
+      {/* <TablePagination
+        rowsPerPageOptions={[5, 10, 25]}
+      /> */}
     </PaperStyle>
   );
 }
 
-export default TableWrapper
+export default BasicTable
