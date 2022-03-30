@@ -79,7 +79,6 @@ export const Wrapper = styled.div`
     color:#ffed00 ;
     border: 2px solid #ffed00 ;
     cursor: pointer;
-   
   }
   .author {
     margin-left: 1rem;

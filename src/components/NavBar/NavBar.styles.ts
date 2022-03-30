@@ -7,7 +7,6 @@ export const Wrapper = styled.section`
   display: grid;
   grid-template-columns: 350px auto 680px;
   width: 100%;
-  padding: 5px 0px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   z-index: 9999;
   `;
@@ -40,9 +39,11 @@ export const HeaderItem = styled.span`
   color: gray;
   font-weight: 700;
   cursor: pointer;
-  transition: .1s ease-in-out;
   &:hover{
     color: #ffffff;
+  }
+  &.nav-active{
+    border-bottom: 2px solid #ffed00;
   }
 `;
 

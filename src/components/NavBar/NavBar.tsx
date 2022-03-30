@@ -6,26 +6,61 @@ import SearchBarWrapper from '../common/SearchBar/SearchBarWrapper';
 import PopoverWrapper from '../common/Popover/PopoverWraper';
 import { HeaderIcon, HeaderItem, HeaderItems, LogoContainer, NavLink, Wrapper } from './NavBar.styles'
 import { Context } from '../../context/Context';
-import { OPENDRAWER } from '../../constants/constants';
+import { ACTIVENAV, OPENDRAWER } from '../../constants/constants';
 
-const NavBar = () => {
+const NavBar: React.FC = () => {
   const { state, dispatch } = React.useContext(Context)
-  const { open } = state;
+  const { open, activeNav, show } = state;
 
-
-  const handleWallet = () => {
+  const handleWallet = React.useCallback(() => {
     dispatch({
       type: OPENDRAWER,
       payload: {
         open: !open
       }
     })
-  }
+  }, [dispatch, open])
+  const handleStatsClick = React.useCallback(() => {
+    dispatch({
+      type: ACTIVENAV,
+      payload: {
+        show: !show,
+        activeNav: "Stats"
+      }
+    })
+  }, [dispatch, show])
+  const handleCreateClick = React.useCallback(() => {
+    dispatch({
+      type: ACTIVENAV,
+      payload: {
+        show: !show,
+        activeNav: "Create"
+      }
+    })
+  }, [dispatch, show])
+  const handleResourcesClick = React.useCallback(() => {
+    dispatch({
+      type: ACTIVENAV,
+      payload: {
+        show: !show,
+        activeNav: "Resources"
+      }
+    })
+  }, [dispatch, show])
+  const handleLogoClick = React.useCallback(() => {
+    dispatch({
+      type: ACTIVENAV,
+      payload: {
+        show: false,
+        activeNav: ""
+      }
+    })
+  }, [dispatch])
   return (
     <Wrapper>
       <div>
         <NavLink to="/">
-          <LogoContainer>
+          <LogoContainer onClick={handleLogoClick}>
             <img src={ibiswaplogo} height={40} width={40} alt='logo' />
             <div className="logo-text"><span>IBISWAP</span></div>
           </LogoContainer>
@@ -34,15 +69,19 @@ const NavBar = () => {
       <SearchBarWrapper title={"Search items , collections , and accounts"} />
       <HeaderItems>
         <PopoverWrapper>
-          <HeaderItem>Collections</HeaderItem>
+          <HeaderItem className={activeNav === 'Collections' ? 'nav-active' : ' '}>
+            Collections
+          </HeaderItem>
         </PopoverWrapper>
         <NavLink to='/stats'>
-          <HeaderItem>
+          <HeaderItem className={activeNav === 'Stats' ? 'nav-active' : ' '} onClick={handleStatsClick}>
             Stats
           </HeaderItem>
         </NavLink>
-        <HeaderItem> Resources </HeaderItem>
-        <HeaderItem> Create </HeaderItem>
+        <HeaderItem className={activeNav === 'Resources' ? 'nav-active' : ' '} onClick={handleResourcesClick}> Resources </HeaderItem>
+        <NavLink to='/login'>
+          <HeaderItem className={activeNav === 'Create' ? 'nav-active' : ' '} onClick={handleCreateClick}> Create </HeaderItem>
+        </NavLink>
         <HeaderIcon>
           <AccountCircleOutlinedIcon className='icon' />
         </HeaderIcon>

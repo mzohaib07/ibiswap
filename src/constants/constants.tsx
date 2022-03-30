@@ -12,6 +12,7 @@ import SportsKabaddiIcon from '@mui/icons-material/SportsKabaddi';
 
 
 export const OPENDRAWER = 'OPENDRAWER'
+export const ACTIVENAV = 'ACTIVENAV'
 export const CardTile = [
     {
         img: 'https://lh3.googleusercontent.com/PSHKxSMSaOZGiEfUuG8aOOGrtG3H5jpwIaZyYoCkutidCq4-jdifdFANNsWNJkOe2YlkSdD4g0J5OsLTptLUahV-VFevnNB4DPQB=w600',

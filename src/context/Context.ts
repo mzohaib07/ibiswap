@@ -1,18 +1,28 @@
 import { createContext } from 'react';
 import {
+    ACTIVENAV,
     OPENDRAWER,
 } from '../constants/constants';
 
 import { dispatch, InitialStateType } from '../types/index';
 
+
 export const initialState: InitialStateType = {
-    open: false
+    open: false,
+    show: false,
+    activeNav: ''
 };
 
 export type Action =
     | {
         type: 'OPENDRAWER', payload: {
             open: boolean,
+        }
+    } |
+    {
+        type: 'ACTIVENAV', payload: {
+            show: boolean
+            activeNav: string
         }
     }
 
@@ -35,6 +45,12 @@ export const Reducer = (state: InitialStateType, action: Action): InitialStateTy
                 ...state,
                 open: action.payload.open,
             };
+        case ACTIVENAV:
+            return {
+                ...state,
+                show: action.payload.show,
+                activeNav: action.payload.activeNav
+            }
 
         default:
             return state;
