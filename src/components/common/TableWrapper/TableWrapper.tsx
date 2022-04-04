@@ -5,7 +5,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { PaperStyle } from './TableWrapper.styles';
 import { COLUMNS, ROWS } from '../../../constants/constants';
-import { TablePagination } from '@mui/material';
 
 
 const BasicTable = () => {
@@ -41,9 +40,6 @@ const BasicTable = () => {
           ))}
         </TableBody>
       </Table>
-      {/* <TablePagination
-        rowsPerPageOptions={[5, 10, 25]}
-      /> */}
     </PaperStyle>
   );
 }
