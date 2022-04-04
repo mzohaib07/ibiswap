@@ -13,6 +13,7 @@ import StatsPage from './Pages/Stats/StatsPage';
 import NFTPage from './Pages/Explore/NFTPage/NFTPage';
 import Create from './Pages/Create/Create';
 import Footer from './components/Footer/Footer';
+import ViewNFT from './Pages/ViewNFT/ViewNFT';
 
 const App: React.FC = () => {
   const [state, dispatch] = React.useReducer(Reducer, initialState)
@@ -26,6 +27,7 @@ const App: React.FC = () => {
           <Route path='/ALL%20NFT' element={<NFTPage />} />
           <Route path='/stats' element={<StatsPage />} />
           <Route path='/login' element={<Create />} />
+          <Route path='/assets/id' element={<ViewNFT />} />
         </Routes>
         <Footer />
       </BrowserRouter>
