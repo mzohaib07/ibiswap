@@ -4,13 +4,16 @@ import { NFTItemsStyles } from './NFTItems.style'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import PopoverContent from '../PopoverContent/PopoverContent';
 import './styles.css'
+import { useNavigate } from 'react-router-dom';
 
 const NFTItems = () => {
+    const Navigate = useNavigate();
+    const handleNFTClick = React.useCallback(() => Navigate('/assets/id'), [Navigate])
     const showContent = () => {
         // document.getElementById('buy-now').
     }
     return (
-        <NFTItemsStyles onMouseEnter={showContent}>
+        <NFTItemsStyles onMouseEnter={showContent} onClick={handleNFTClick}>
             <Card className='card'>
                 <CardMedia
                     component="img"

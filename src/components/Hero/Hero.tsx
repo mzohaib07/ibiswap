@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Wrapper } from './Hero.styles'
 
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
     <Wrapper>
       <div className='img-container'></div>
@@ -15,8 +16,8 @@ const Hero = () => {
               Trade and earn. IBISWAP holders receive rewards paid in IBI. The first rewarding plataform of lifestyle.
             </div>
             <div className='ctaContainer'>
-              <button className='explore-btn'>Explore</button>
-              <button className='create-btn'><span>Create</span></button>
+              <button className='explore-btn'><span>Explore</span></button>
+              <Link to='/login'><button className='create-btn'><span>Create</span></button></Link>
             </div>
           </div>
           <div className='card-container'>
