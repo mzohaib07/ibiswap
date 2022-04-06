@@ -11,6 +11,11 @@ export const Wrapper = styled.div`
         margin-top: 10px;
         margin-left: 15px;
         }
+        .item-list{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+        }
     }
 `
 export const NFTStyles = styled.section`
@@ -20,4 +25,5 @@ export const NFTStyles = styled.section`
         /* justify-content: center; */
         margin-top: 40px;
         row-gap: 30px;
+        margin-bottom: 60px;
 ` 

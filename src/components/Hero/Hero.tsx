@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
               <button className='explore-btn'><span>Explore</span></button>
               <Link to='/login'><button className='create-btn'><span>Create</span></button></Link>
             </div>
-          </div>
+          </div> 
           <div className='card-container'>
             <img
               className='main-img'

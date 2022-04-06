@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    height: 75vh;
+    height: 62vh;
     padding: 0px 150px
   }
   .ctaContainer{

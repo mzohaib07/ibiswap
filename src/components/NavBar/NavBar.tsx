@@ -69,7 +69,7 @@ const NavBar: React.FC = () => {
       <SearchBarWrapper title={"Search items , collections , and accounts"} />
       <HeaderItems>
         <PopoverWrapper>
-          <HeaderItem className={activeNav === 'Collections' ? 'nav-active' : ' '}>
+          <HeaderItem>
             Collections
           </HeaderItem>
         </PopoverWrapper>
