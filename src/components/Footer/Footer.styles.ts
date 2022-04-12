@@ -1,18 +1,26 @@
+import { Paper } from "@mui/material";
 import styled from "styled-components";
 
+
+export const Item = styled(Paper)`
+    display: block;
+`
+
 export const FooterStyles = styled.div`
-    background-color: #04111d;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 250px;
-    color: white;
-    padding: 80px 0px 30px 0px;
+    .grid-container{
+        background-color: #04111d;
+        /* display: flex;
+        flex-direction: column; */
+        padding: 80px 0px 30px 0px; 
+    }
     .first-grid{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        column-gap: 245px;
+        display: flex;        
+        padding: 22px 0px 86px 0px;
+        column-gap: 273px;
+        background-color: #04111d;
+        color: white;
         .left-grid{
+            
         span{
             font-weight: 800;
             font-size: 22px;
@@ -76,6 +84,8 @@ export const FooterStyles = styled.div`
         flex-direction: row;
         justify-content: center;
         column-gap: 120px;
+        background-color: inherit;
+        color: white;
         .title{
             font-weight: 600;
             color: #ffed00;
@@ -118,5 +128,7 @@ export const FooterStyles = styled.div`
         flex-direction: row;
         justify-content: space-around;
         column-gap: 210px;
+        background-color: inherit;
+        color: white;
     }
 `

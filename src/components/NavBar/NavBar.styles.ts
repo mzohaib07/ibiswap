@@ -1,14 +1,19 @@
 import styled from "styled-components";
 import { Link } from 'react-router-dom'
+import { Box } from "@mui/system";
 
 
-export const Wrapper = styled.section`
-  background-color:#04111d;
-  display: grid;
-  grid-template-columns: 350px auto 680px;
-  width: 100%;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  z-index: 9999;
+export const BoxWrapper = styled(Box)`
+  position: fixed;
+  &.wrapper{
+    background-color:#04111d;
+    display: grid;
+    grid-template-columns: auto 700px 680px;
+    width: 100%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    z-index: 9999;
+    height: 70px;
+}
   `;
 
 export const NavLink = styled(Link)`
@@ -33,6 +38,9 @@ export const HeaderItems = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 export const HeaderItem = styled.span`
   padding: 23px;

@@ -1,30 +1,31 @@
-import { Card, Typography } from "@mui/material"
-import { CardTile } from "../../../constants/constants"
-import { CardStyles } from "./CardWrapper.styles"
+import { Card, Grid } from "@mui/material";
+import { CardTile } from "../../../constants/constants";
+import { CardStyles, Item } from "./CardWrapper.styles";
 
 const CardWrapper = () => {
   return (
     <CardStyles>
-      <div className="title-section">
-        <span className="title">Notable Drops</span>
-      </div>
-      <div className="card-section">
-        {CardTile && CardTile.map((item, index) =>
-          <Card key={index} className='card'>
-            <img
-              className="img-container"
-              src={item?.img}
-              alt="green iguana"
-            />
-            <div className="content">
-              <span><Typography>{item?.title}</Typography></span>
-              <span><Typography>{item?.desp}</Typography></span>
-            </div>
-          </Card>
-        )}
-      </div>
+      <Grid container>
+        <Item>
+          <div className="title-section">
+            <span className="title">Notable Drops</span>
+          </div>
+          <div className="card-section">
+            {CardTile &&
+              CardTile.map((item, index) => (
+                <Card key={index} className="card">
+                  <img
+                    className="img-container"
+                    src={item?.img}
+                    alt="green iguana"
+                  />
+                </Card>
+              ))}
+          </div>
+        </Item>
+      </Grid>
     </CardStyles>
-  )
-}
+  );
+};
 
-export default CardWrapper
+export default CardWrapper;

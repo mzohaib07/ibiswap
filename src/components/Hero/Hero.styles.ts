@@ -1,35 +1,35 @@
+import { Paper } from "@mui/material";
 import styled from "styled-components";
-import bgImg from "../../assets/bg-img.png";
+
+export const Item = styled(Paper)`
+   /* padding: 30px; */
+   /* text-align: center; */
+`
 
 export const Wrapper = styled.div`
-  position: relative;
-
-  .container {
+ .content-wrapper {
     display: flex;
-    justify-content: center;
-  }
-  .img-container{
-    background-image: url(${bgImg});
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 9999;
-  }
-  .content-wrapper {
-    display: flex;
-    position: relative;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    height: 62vh;
-    padding: 0px 150px
+    padding: 150px 150px;
+    border: none;
+    outline: none;
+
+    &:hover{
+      cursor: pointer;
+    }
+
   }
-  .ctaContainer{
-    margin-top: 30px;
+  .grid-container{
+    display:flex;
+    justify-content: center;
   }
+
   .copy-container {
-    width: 40%;
-    height: 445px;  
-  }
+    width:700px;
+    background-color: inherit !important;
+  }  
   .main-img{
     width: 570px;
     height: 450px;
@@ -96,5 +96,5 @@ export const Wrapper = styled.div`
     background-color: #303339;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-  }
+  } 
 `;
