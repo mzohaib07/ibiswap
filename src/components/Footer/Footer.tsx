@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, Box } from "@mui/material";
 import { FooterStyles, Item } from "./Footer.styles";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -21,18 +21,20 @@ const Footer = () => {
       <Grid container className="main-container">
         <Grid item sm="auto" className='upper-footer'>
           <Item elevation={0} className="left-grid">
-            <span>Stay in the loop</span>
-            <Typography className="left-grid-disp">
-              Join our mailing list to stay in the loop with our newest
-              feature releases, NFT drops, and tips and tricks for navigating
-              OpenSea.
-            </Typography>
-            <div className="left-grid-searchbar">
-              <SearchBarWrapper title="Enter your Email" />
-              <span>
-                <button>Sign Up</button>
-              </span>
-            </div>
+            <Box>
+              <span>Stay in the loop</span>
+              <Typography className="left-grid-disp">
+                Join our mailing list to stay in the loop with our newest
+                feature releases, NFT drops, and tips and tricks for navigating
+                OpenSea.
+              </Typography>
+              <div className="left-grid-searchbar">
+                <SearchBarWrapper title="Enter your Email" />
+                <span>
+                  <button>Sign Up</button>
+                </span>
+              </div>
+            </Box>
           </Item>
         </Grid>
         <Grid item sm="auto" className='upper-footer'>
@@ -60,7 +62,6 @@ const Footer = () => {
       <Grid container className="lower-footer">
         <Grid item sm="auto" >
           <Item className="first-col">
-
             <span>
               <img src={ibiswaplogo} alt="logo" height={40} width={40} />
             </span>
@@ -153,14 +154,14 @@ const Footer = () => {
         />
       </div>
       <Grid container >
-        <Grid item xs={6} lg={6} className="lower-down-grid">
-          <Item elevation={0} className='color'> 
+        <Grid item xs={12} lg={6} className="lower-down-grid">
+          <Item elevation={0} className='color'>
             <span style={{ fontSize: "12px" }}>
               © 2018 - 2022 Ozone Networks, Inc
             </span>
           </Item>
         </Grid>
-        <Grid item xs={6} lg={6} className="lower-down-grid">
+        <Grid item xs={12} lg={6} className="lower-down-grid">
           <Item elevation={0} className='color'>
             <span style={{ fontSize: "12px", cursor: "pointer" }}>
               Privacy Policy Terms of Service

@@ -39,8 +39,13 @@ export const CardStyles = styled.div`
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       background-color: #202225;
       img {
+        border-radius: 10px;
         height: 650px;
         width: 480px;
+        @media (max-width: 768px) {
+          height: 350px;
+          width: 300px;
+        }
       }
     }
     &:hover{

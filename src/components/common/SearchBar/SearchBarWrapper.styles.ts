@@ -10,8 +10,6 @@ export const SearchBar = styled.div`
   padding: 10px 10px;
   height: 25px;
   gap: 10px;
-  width: 600px;
-  max-width: 300px;
   .search-icon {
     margin-left: 0.75rem;
     margin-right: 0.75rem;

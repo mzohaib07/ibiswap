@@ -2,7 +2,6 @@ import { Paper } from "@mui/material";
 import styled from "styled-components";
 
 export const Item = styled(Paper)`
-  /* display: block; */
 `;
 
 export const FooterStyles = styled.div`
@@ -18,6 +17,9 @@ export const FooterStyles = styled.div`
       background-color: inherit;
       padding: 100px 0px 86px 0px;
       color: white;
+      @media (max-width: 768px) {
+          margin-left:50px;
+        }
       span {
         font-weight: 800;
         font-size: 22px;
@@ -25,9 +27,12 @@ export const FooterStyles = styled.div`
       }
       .left-grid-disp {
         margin-top: 20px;
-        width: 680px;
+        width: 600px;
         font-size: 17px;
         font-weight: 400;
+        @media (max-width: 768px) {
+          max-width: 300px;
+        }
       }
       .left-grid-searchbar {
         display: flex;
@@ -98,9 +103,13 @@ export const FooterStyles = styled.div`
         width: 350px;
         background-color: inherit;
         color: white;
+        @media (max-width: 768px) {
+              width: 200px;
+        }
         .iner-content{
           display: flex;
           flex-direction: column;
+
         .ibiswap {
           font-weight: 600;
           font-size: 20px;
@@ -154,8 +163,8 @@ export const FooterStyles = styled.div`
     display: flex;
     justify-content: center;
     width: 400px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     
     .color {
       background-color: #04111d;

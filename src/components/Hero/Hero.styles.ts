@@ -1,9 +1,7 @@
 import { Paper } from "@mui/material";
 import styled from "styled-components";
 
-export const Item = styled(Paper)`
-
-`
+export const Item = styled(Paper)``
 
 export const Wrapper = styled.div`
  .content-wrapper {
@@ -40,6 +38,10 @@ export const Wrapper = styled.div`
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     margin-bottom: -4px;
+    @media (max-width: 768px) {
+          height: 350px;
+          width: 350px;
+        }
   }
   .title {
     position: relative;
@@ -48,6 +50,10 @@ export const Wrapper = styled.div`
     font-size: 54px;
     color: #ffed00;
     line-height: 4rem;
+    @media (max-width: 768px) {
+      font-size: 44px;
+      line-height: 3rem;
+        }
   }
   .card-container{
     display: flex;
