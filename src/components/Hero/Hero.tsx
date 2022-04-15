@@ -6,9 +6,9 @@ import { Item, Wrapper } from './Hero.styles'
 const Hero: React.FC = () => {
   return (
     <Wrapper>
-      <Grid className='content-wrapper'>
-        <Grid container lg={6} className='grid-container'>
-          <Item className='copy-container'>
+      <Grid container className='content-wrapper'>
+        <Grid item lg={6} className='desp-container'>
+          <Item elevation={0} className='copy-container'>
             <Box className='title'>
               IBISWAP the lifestyle utility token now on decentralized exchanges.
             </Box>
@@ -21,8 +21,8 @@ const Hero: React.FC = () => {
             </Box>
           </Item>
         </Grid>
-        <Grid container lg={6}>
-          <Item>
+        <Grid item lg={6} className='grid-container'>
+          <Item style={{ backgroundColor: '#202225' }}>
             <img
               className='main-img'
               src="https://lh3.googleusercontent.com/ujepnqpnL0nDQIHsWxlCXzyw4pf01yjz1Jmb4kAQHumJAPrSEj0-e3ABMZlZ1HEpJoqwOcY_kgnuJGzfXbd2Tijri66GXUtfN2MXQA=s550"

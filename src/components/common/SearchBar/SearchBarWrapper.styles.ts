@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SearchBar = styled.div`
   display: flex;
-  flex: 1 1 0%;
+  flex-direction: row;
   align-items: center;
   background-color: #363840;
   border-radius: 10px;
@@ -10,6 +10,8 @@ export const SearchBar = styled.div`
   padding: 10px 10px;
   height: 25px;
   gap: 10px;
+  width: 600px;
+  max-width: 300px;
   .search-icon {
     margin-left: 0.75rem;
     margin-right: 0.75rem;

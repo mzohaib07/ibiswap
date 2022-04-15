@@ -1,24 +1,24 @@
 import styled from "styled-components";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import { Box } from "@mui/system";
-
 
 export const BoxWrapper = styled(Box)`
   position: fixed;
-  &.wrapper{
-    background-color:#04111d;
-    display: grid;
-    grid-template-columns: auto 700px 680px;
-    width: 100%;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 100%;
+  background-color: #04111d;
+  &.wrapper {
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
     z-index: 9999;
     height: 70px;
-}
-  `;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+`;
 
 export const NavLink = styled(Link)`
-    text-decoration: none;
-`
+  text-decoration: none;
+`;
 export const LogoContainer = styled.div`
   display: flex;
   align-items: center;
@@ -47,10 +47,10 @@ export const HeaderItem = styled.span`
   color: gray;
   font-weight: 700;
   cursor: pointer;
-  &:hover{
+  &:hover {
     color: #ffffff;
   }
-  &.nav-active{
+  &.nav-active {
     border-bottom: 2px solid #ffed00;
   }
 `;
@@ -62,12 +62,12 @@ export const HeaderIcon = styled.div`
   line-height: 2.25rem;
   font-weight: 900;
   cursor: pointer;
-  .icon{
-      color: gray;
-      font-size: 33px;
-      transition: .1s ease-in-out;
-      &:hover{
-        color: white;
-      }
+  .icon {
+    color: gray;
+    font-size: 33px;
+    transition: 0.1s ease-in-out;
+    &:hover {
+      color: white;
+    }
   }
 `;

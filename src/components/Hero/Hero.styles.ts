@@ -2,33 +2,36 @@ import { Paper } from "@mui/material";
 import styled from "styled-components";
 
 export const Item = styled(Paper)`
-   /* padding: 30px; */
-   /* text-align: center; */
+
 `
 
 export const Wrapper = styled.div`
  .content-wrapper {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     padding: 150px 150px;
-    border: none;
-    outline: none;
-
-    &:hover{
-      cursor: pointer;
-    }
-
+    row-gap: 60px;
   }
+
   .grid-container{
     display:flex;
     justify-content: center;
+    transition: 0.2s ease-in-out;
+    &:hover{
+      cursor: pointer;
+      transform: scale(1.01);
+    }
   }
 
   .copy-container {
-    width:700px;
+    max-width:700px;
     background-color: inherit !important;
+    .ctaContainer{
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 20px;
+    }
   }  
   .main-img{
     width: 570px;
@@ -36,6 +39,7 @@ export const Wrapper = styled.div`
     object-fit: cover;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    margin-bottom: -4px;
   }
   .title {
     position: relative;

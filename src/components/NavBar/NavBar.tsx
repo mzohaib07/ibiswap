@@ -75,45 +75,49 @@ const NavBar: React.FC = () => {
           </LogoContainer>
         </NavLink>
       </div>
-      <SearchBarWrapper title={"Search items , collections , and accounts"} />
-      <HeaderItems>
-        <PopoverWrapper>
-          <HeaderItem>Collections</HeaderItem>
-        </PopoverWrapper>
-        <NavLink to="/stats">
+      <div>
+        <SearchBarWrapper title={"Search items , collections , and accounts"} />
+      </div>
+      <div>
+        <HeaderItems>
+          <PopoverWrapper>
+            <HeaderItem>Collections</HeaderItem>
+          </PopoverWrapper>
+          <NavLink to="/stats">
+            <HeaderItem
+              className={activeNav === "Stats" ? "nav-active" : " "}
+              onClick={handleStatsClick}
+            >
+              Stats
+            </HeaderItem>
+          </NavLink>
           <HeaderItem
-            className={activeNav === "Stats" ? "nav-active" : " "}
-            onClick={handleStatsClick}
-          >
-            Stats
-          </HeaderItem>
-        </NavLink>
-        <HeaderItem
-          className={activeNav === "Resources" ? "nav-active" : " "}
-          onClick={handleResourcesClick}
-        >
-          {" "}
-          Resources{" "}
-        </HeaderItem>
-        <NavLink to="/login">
-          <HeaderItem
-            className={activeNav === "Create" ? "nav-active" : " "}
-            onClick={handleCreateClick}
+            className={activeNav === "Resources" ? "nav-active" : " "}
+            onClick={handleResourcesClick}
           >
             {" "}
-            Create{" "}
+            Resources{" "}
           </HeaderItem>
-        </NavLink>
-        <HeaderIcon>
-          <AccountCircleOutlinedIcon className="icon" />
-        </HeaderIcon>
-        <HeaderIcon>
-          <AccountBalanceWalletOutlinedIcon
-            className="icon"
-            onClick={handleWallet}
-          />
-        </HeaderIcon>
-      </HeaderItems>
+          <NavLink to="/login">
+            <HeaderItem
+              className={activeNav === "Create" ? "nav-active" : " "}
+              onClick={handleCreateClick}
+            >
+              {" "}
+              Create{" "}
+            </HeaderItem>
+          </NavLink>
+          <HeaderIcon>
+            <AccountCircleOutlinedIcon className="icon" />
+          </HeaderIcon>
+          <HeaderIcon>
+            <AccountBalanceWalletOutlinedIcon
+              className="icon"
+              onClick={handleWallet}
+            />
+          </HeaderIcon>
+        </HeaderItems>
+      </div>
     </BoxWrapper>
   );
 };
