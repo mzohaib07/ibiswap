@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const NFTItemsStyles = styled.section`
     width: 284px;
-    /* margin-right: 5px; */
     margin-left: 30px;
 
     .card{

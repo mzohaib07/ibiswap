@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
 &.wrapper{
+        
         display: grid;
         grid-template-columns:auto;
         .item-list{
@@ -10,6 +11,7 @@ export const Wrapper = styled.div`
         font-size: 18px;
         margin-top: 10px;
         margin-left: 15px;
+        margin-top: 150px;
         }
         .item-list{
                 display: flex;

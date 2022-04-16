@@ -7,6 +7,7 @@ export const CreateSyles = styled.div`
     padding: 50px 100px;
     .box{
        width :650px;
+       margin-top: 100px;
     }
     .profile-icon{
         font-size: 35px;
