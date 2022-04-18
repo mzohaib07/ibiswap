@@ -1,41 +1,47 @@
+import { Paper } from "@mui/material";
 import styled from "styled-components";
-import bgImg from "../../assets/bg-img.png";
+
+export const Item = styled(Paper)``
 
 export const Wrapper = styled.div`
-  position: relative;
-
-  .container {
+ .content-wrapper {
     display: flex;
-    justify-content: center;
-  }
-  .img-container{
-    background-image: url(${bgImg});
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 9999;
-  }
-  .content-wrapper {
-    display: flex;
-    position: relative;
-    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    height: 75vh;
-    padding: 0px 150px
+    padding: 150px 150px;
+    row-gap: 60px;
   }
-  .ctaContainer{
-    margin-top: 30px;
+
+  .grid-container{
+    display:flex;
+    justify-content: center;
+    transition: 0.2s ease-in-out;
+    &:hover{
+      cursor: pointer;
+      transform: scale(1.01);
+    }
   }
+
   .copy-container {
-    width: 40%;
-    height: 445px;  
-  }
+    max-width:700px;
+    background-color: inherit !important;
+    .ctaContainer{
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 20px;
+    }
+  }  
   .main-img{
     width: 570px;
     height: 450px;
     object-fit: cover;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    margin-bottom: -4px;
+    @media (max-width: 768px) {
+          height: 350px;
+          width: 350px;
+        }
   }
   .title {
     position: relative;
@@ -44,6 +50,10 @@ export const Wrapper = styled.div`
     font-size: 54px;
     color: #ffed00;
     line-height: 4rem;
+    @media (max-width: 768px) {
+      font-size: 44px;
+      line-height: 3rem;
+        }
   }
   .card-container{
     display: flex;
@@ -96,5 +106,5 @@ export const Wrapper = styled.div`
     background-color: #303339;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-  }
+  } 
 `;

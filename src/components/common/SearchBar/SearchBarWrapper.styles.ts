@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SearchBar = styled.div`
   display: flex;
-  flex: 1 1 0%;
+  flex-direction: row;
   align-items: center;
   background-color: #363840;
   border-radius: 10px;

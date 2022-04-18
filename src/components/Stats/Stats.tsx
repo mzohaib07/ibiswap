@@ -8,6 +8,7 @@ import { CHAINS, explore, FIRSTSELECT } from '../../constants/constants'
 const Stats = () => {
     return (
         <StatsStyle>
+        
             <div className='title-section'>
                 <Typography className='title' variant='h3'>Top NFTs</Typography>
             </div>
@@ -22,7 +23,6 @@ const Stats = () => {
             <div className='table-section'>
                 <TableWrapper />
             </div>
-
         </StatsStyle>
     )
 }

@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 export const StatsStyle = styled.div`
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 80px;
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 100px; */
+
     .title-section{
         display: flex;
         justify-content: center;
         align-self: center;
+        margin-top: 101px;
         .title{
            margin-top: 50px;
            color: white;
